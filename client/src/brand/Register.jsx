@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useContext, useEffect } from "react";
 import { useNavigate, Outlet } from 'react-router-dom'
-import Navbar from './NavbarLogin'
+import Navbar from './NavbarRegister'
 import './Login.css'
 import GoogleLogo from '/web_light_rd_SI.svg'
 import { Form, Button, Alert } from 'react-bootstrap';
@@ -219,7 +219,7 @@ const RegisterPage = () => {
               <img src={GoogleLogo}></img>
               </button>   */}
               <br></br>
-              Already have an account? You can <a href='/login'>Login</a>              
+              Already have an account? You can <a href='/brand/login'>Login</a>              
                 </div>
       </Form>
             </div>

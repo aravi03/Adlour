@@ -19,7 +19,7 @@ router.post("/update/:brandID",async function (req, res) {
     console.log(doc)
     res.json({'brand':doc})
   }
-  catch(error){
+  catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -32,7 +32,7 @@ router.get("/viewcampaign/:id",async function (req, res) {
   console.log("Campaign is ",campaign)
   res.json({campaign})
 }
-catch(error){
+catch(err){
   console.error('Error finding campaigns by author:', err);
   res.send("Error occured")
 }  
@@ -46,7 +46,7 @@ router.post("/searchcreators",async function (req, res) {
     console.log(docs)
     res.json({creators:docs})
   }
-  catch(error){
+  catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -59,7 +59,7 @@ router.get("/viewcreator/:id",async function (req, res) {
   console.log("User is ",user)
   res.json({user})
 }
-catch(error){
+catch(err){
   console.error('Error finding campaigns by author:', err);
   res.send("Error occured")
 }  

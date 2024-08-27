@@ -20,7 +20,7 @@ router.post("/update/:userID",async function (req, res) {
     const doc=await User.findOneAndUpdate(filter,update)
     console.log(doc)
     res.json({'user':doc})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -33,7 +33,7 @@ router.post("/user/searchbrand",async function (req, res) {
         { "name": { "$regex": name, "$options": "i" }})    
     console.log(docs)
     res.json({brands:docs})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }    
@@ -47,7 +47,7 @@ router.post("/user/searchcampaign",async function (req, res) {
         { "name": { "$regex": name, "$options": "i" }}).sort({ deadline: -1 })
         console.log(docs)
         res.json({campaigns:docs})
-      }    catch(error){
+      }    catch(err){
         console.error('Error finding campaigns by author:', err);
         res.send("Error occured")
       }  
@@ -59,7 +59,7 @@ router.get("/user/viewbrand/:id",async function (req, res) {
     const id=req.params.id
     const brand= await Brand.findById(id)
     res.json({brand})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -71,7 +71,7 @@ router.post("/user/viewcampaigns",async function (req, res) {
     const campaigns= await Campaign.find({author:brandID}).sort({ deadline: -1 })
     console.log(campaigns)
     res.json({campaigns})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  

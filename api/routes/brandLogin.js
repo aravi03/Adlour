@@ -20,7 +20,7 @@ router.get('/google',
     try{
     console.log("req user is ",req.user)
     res.redirect(frontendURL+'/brand/home')  }
-    catch(error){
+    catch(err){
       console.error('Error finding campaigns by author:', err);
       res.send("Error occured")
     }  
@@ -33,7 +33,7 @@ router.get('/google',
       if (err) { return next(err); }
       res.redirect(frontendURL+'/brand/login');
     });
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -45,7 +45,7 @@ router.get('/google',
     console.log("user is isloggedin",user)
     if(user&&user.accountType=='brand')    res.json({"user":user})
     else  res.json({"user":null})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -56,7 +56,7 @@ router.get('/google',
     console.log("user is login",req.user)
     if(req.user)    res.json({"user":req.user})
       else  res.json({"user":null})
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }  
@@ -73,7 +73,7 @@ router.get('/google',
       message: 'User registered successfully',
       user: registeredUser,
     })   
-  }    catch(error){
+  }    catch(err){
     console.error('Error finding campaigns by author:', err);
     res.send("Error occured")
   }     
