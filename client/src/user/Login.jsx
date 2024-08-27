@@ -153,7 +153,7 @@ const handleClickLogin = () => {
               <img src={GoogleLogo}></img>
               </button> */}
               <br></br>             
-             Don't have an account? You can <a href='/register'>Register</a>              
+             Don't have an account? You can <a href='/creator/register'>Register</a>              
                 </div>
 
                
