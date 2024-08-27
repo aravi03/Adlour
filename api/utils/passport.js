@@ -7,6 +7,7 @@ require('../strategies/LocalBrandsStrategy');
 require('../strategies/LocalStrategy');
 
 passport.serializeUser((user, done) => {
+  console.log('serialize ', user)
   done(null, { id: user._id, type: user.constructor.modelName });
 });
 

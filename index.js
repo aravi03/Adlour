@@ -16,7 +16,7 @@ const passport = require('./api/utils/passport'); // Import passport configurati
 // require("./api/strategies/LocalBrandsStrategy")
 require("./api/config/connectdb")
 const corsOptions = {
-  origin: 'http://localhost:5173',//(https://your-client-app.com)
+  origin: 'https://www.adlour.com',//(https://your-client-app.com)
   credentials: true
 };
 // support parsing of application/json type post data
