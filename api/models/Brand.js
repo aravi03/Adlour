@@ -37,7 +37,7 @@ const Brand = new Schema({
   },
   accountType:{
     type: String,
-    default: "",
+    default: "brand",
   },
   conversations: [
     {
