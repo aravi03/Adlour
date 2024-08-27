@@ -13,12 +13,14 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (obj, done) => {
   try {
+    console.log('obj from deserialize ',obj)
     const Model = obj.type === 'Brand' ? require('../models/Brand') : require('../models/User');
     const user = await Model.findById(obj.id);
     console.log('user from deserialize ',user)
     if (!user) return done(null, false);
     done(null, user);
   } catch (error) {
+    console.log('error from deserialize ',error)
     done(error, false);
   }
 });
