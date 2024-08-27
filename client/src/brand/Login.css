@@ -1,0 +1,22 @@
+.adlour-logo-login{
+    color: var(--heading-color);
+
+}
+.adlour-logo-login span{
+    color: var(--accent-color);
+    font-size: 50px;
+    font-weight: 600;
+    padding-left: 3px;
+    font-family: var(--default-font);
+}
+.brand-tagline-login{
+    font-size: 20px;
+    font-family: 'Josefin Sans', cursive;
+    color: var(--accent-color);
+}
+.nav-link{
+    font-family: 'Josefin Sans', cursive; 
+}
+.nav-link:hover{
+    font-family: 'Josefin Sans', cursive; 
+}

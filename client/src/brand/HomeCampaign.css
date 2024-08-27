@@ -1,0 +1,81 @@
+.profile-img {
+    width: 85px; /* Adjust size as needed */
+    height: 85px; /* Adjust size as needed */
+    position: absolute;
+    bottom: 170px; /* Half of the profile-img height to overlap the cover photo */
+    left: 50%;
+    transform: translateX(-50%);
+    background:white;
+    border: 3px solid var(--accent-color) /* Optional: border for the profile image */
+                  
+  }
+  
+  @media (max-width: 1200px) {
+    .profile-img {
+        bottom: 170px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  @media (max-width: 1102px) {
+    .profile-img {
+        bottom: 185px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+ 
+  @media (max-width: 991px) {
+    .profile-img {
+        bottom: 160px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .profile-img {
+        bottom: 170px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .profile-img {
+        bottom: 170px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  
+  .profile-img-modal {
+    width: 85px; /* Adjust size as needed */
+    height: 85px; /* Adjust size as needed */
+    position: absolute;
+    bottom: 500px; /* Half of the profile-img height to overlap the cover photo */
+    left: 50%;
+    transform: translateX(-50%);
+    background:white;
+    border: 3px solid var(--accent-color) /* Optional: border for the profile image */
+                  
+  }
+  .profile-img-brand {
+    width: 85px; /* Adjust size as needed */
+    height: 85px; /* Adjust size as needed */
+    position: absolute;
+    bottom: 190px; /* Half of the profile-img height to overlap the cover photo */
+    left: 50%;
+    transform: translateX(-50%);
+    background:white;
+    border: 3px solid var(--accent-color) /* Optional: border for the profile image */
+                  
+  }
+  
+  @media (max-width: 1200px) {
+    .profile-img-brand {
+        bottom: 190px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  @media (max-width: 1102px) {
+    .profile-img-brand {
+        bottom: 205px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+ 
+  @media (max-width: 990px) {
+    .profile-img-brand {
+        bottom: 220px; /* Half of the profile-img height to overlap the cover photo */
+    }
+  }
+  

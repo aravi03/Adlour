@@ -1,0 +1,9 @@
+.brand-name{
+    color: var(--accent-color);
+    text-decoration:none;
+    
+}
+.search-btn{
+    background-color: var(--accent-color);
+    color: white;
+}

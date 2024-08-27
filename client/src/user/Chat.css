@@ -1,0 +1,52 @@
+.scrollable-div {
+  height: 580px; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+.scrollable-div::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-div::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scrollable-div::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.scrollable-div-message {
+  height: 400px; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+.scrollable-div-message::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-div-message::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scrollable-div-message::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+a{
+  text-decoration: none;
+}
+
+.message-card {
+  border-radius: 20px 20px 20px 0; /* Top-left corner is sharp, others are rounded */
+  background-color: var(--accent-color); /* Light grey background */
+  color: white;
+  max-width: 75%; /* Make the card narrower, like a message bubble */
+}
+
+.message-card-received {
+  border-radius: 20px 20px 0 20px; /* Top-right corner is sharp, others are rounded */
+  background-color: white; /* Blue background */
+  color: black; /* White text for contrast */
+  max-width: 75%;
+}
+

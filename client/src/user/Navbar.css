@@ -1,0 +1,48 @@
+.adlour-brand-name {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    line-height: 1.2;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.navbar-brand span{
+    color: var(--accent-color);
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 3px;
+    font-family: var(--default-font);
+}
+.nav-link{
+    color: var(--nav-dropdown-color);
+    font-family: var(--nav-font);
+}
+.nav-link:hover{
+    color: var(--accent-color);
+    font-family: var(--nav-font);
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show .nav-link:hover
+{    color: var(--accent-color);
+}
+.navnar-dropdown-item{
+    color: black;
+    background-color: white;
+}
+.navnar-dropdown-item:hover{
+    color: var(--accent-color);
+}
+.dropdown-item.active{
+    background-color: white;
+    color: black;
+}
+.dropdown-item.active:hover, .dropdown-item:active{
+    background-color: white;
+    color: var(--accent-color);
+}
