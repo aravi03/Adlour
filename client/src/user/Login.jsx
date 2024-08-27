@@ -147,11 +147,11 @@ const handleClickLogin = () => {
                   Login
                 </button>
                 <br></br>
-                or you can
+                {/* or you can
                 <br></br>
                 <button onClick={handleClickGoogle}  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
               <img src={GoogleLogo}></img>
-              </button>
+              </button> */}
               <br></br>             
              Don't have an account? You can <a href='/register'>Register</a>              
                 </div>
