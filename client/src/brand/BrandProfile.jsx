@@ -98,7 +98,7 @@ const BrandProfile = () => {
       e.preventDefault();
       console.log("here in submit")
       const formData = { name,category,location,website,description,profilePic};
-      const url= apiURL+'/api/brand/update/'+brandContext.brand._id
+      const url= apiUrl+'/api/brand/update/'+brandContext.brand._id
       fetch(url, {
         method: 'POST',
         credentials: 'include',
@@ -119,7 +119,7 @@ const BrandProfile = () => {
       e.preventDefault();
       console.log("here in submit")       
       const formData = { name:CampaignName,location:CampaignLocation,description:CampaignDescription,deadline:CampaignDeadline,category:CampaignCategory,language:CampaignLanguage};
-      const url=apiURL+'/api/brand/createcampaign/'+brandContext.brand._id
+      const url=apiUrl+'/api/brand/createcampaign/'+brandContext.brand._id
       fetch(url, {
         method: 'POST',
         credentials: 'include',
@@ -137,7 +137,7 @@ const BrandProfile = () => {
     };
 
     useEffect(() => {
-      const url=apiURL+'/api/brand/mycampaigns/'+brandContext.brand._id
+      const url=apiUrl+'/api/brand/mycampaigns/'+brandContext.brand._id
       console.log("url is ",url)  
       fetch(url,{credentials: "include"})
                   .then((res) => res.json())

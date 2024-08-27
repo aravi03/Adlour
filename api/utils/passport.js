@@ -14,6 +14,7 @@ passport.deserializeUser(async (obj, done) => {
   try {
     const Model = obj.type === 'Brand' ? require('../models/Brand') : require('../models/User');
     const user = await Model.findById(obj.id);
+    console.log('user from deserialize ',user)
     if (!user) return done(null, false);
     done(null, user);
   } catch (error) {
