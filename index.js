@@ -48,7 +48,9 @@ app.use((req, res, next) => {
 });
 
 app.use(cors(corsOptions));
-
+app.get('/test',function(req,res){
+  res.send("App is working")
+})
 app.use('/api',App)
 const server = app.listen(process.env.PORT || 5000, function () {
 const port = server.address().port
