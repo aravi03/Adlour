@@ -26,6 +26,23 @@ router.post("/update/:userID",async function (req, res) {
   }  
 })
 
+router.post("/updatepic/:userID",async function (req, res) {
+  try{
+  var {userID}=req.params
+  userID= new ObjectId(userID)
+  const filter = { _id: userID };
+  const {profilePic}=req.body
+  const update = {profilePic}
+  console.log(userID,update)
+  const doc=await User.findOneAndUpdate(filter,update)
+  console.log(doc)
+  res.json({'user':doc})
+}    catch(err){
+  console.error('Error finding campaigns by author:', err);
+  res.send("Error occured")
+}  
+})
+
 router.post("/user/searchbrand",async function (req, res) {
     try{
     const name = req.body.query

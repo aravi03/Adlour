@@ -7,6 +7,7 @@ import Cover from '/shoes_cover.jpg';
 import YoutubeIcon from '/youtube.png'
 import { UserContext } from "../utils/UserContext"
 import { Modal, Button,Form } from 'react-bootstrap';
+import ProfilePicUploader from './ProfilePicUploader'; // Import ProfilePicUploader
 
 const UserProfile = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -20,6 +21,12 @@ const UserProfile = () => {
     const [description, setDescription] = useState(userContext.user.description || '');
     const [profilePic, setProfilePic] = useState(userContext.user.profilePic || '');
     const [showModal, setShowModal] = useState(false);
+    
+    const handleProfilePicChange = (newProfilePic) => {
+      setProfilePic(newProfilePic);
+      window.location.reload()
+    };
+
     const categories = [
       "Fashion",
       "Education",
@@ -108,8 +115,12 @@ const UserProfile = () => {
               {/* <img style={{width:'100%', height:'100%'}} src={Cover} class="card-img-top" alt="Cover Photo"/> */}
                 <div className="card-body">
                 <div className="d-flex align-items-center">
-                <img className="rounded-circle" style={{height:'100px',width:'100px',backgroundColor:'white'}} src={userContext.user.profilePic}
+                
+                {/* <img className="rounded-circle" style={{height:'100px',width:'100px',backgroundColor:'white'}} src={userContext.user.profilePic}
               onError={(e) => e.target.src = "/profilePic.jpg"} alt={'Name'} />
+                 */}
+                                  <ProfilePicUploader currentProfilePic={profilePic} onProfilePicChange={handleProfilePicChange} />
+
                 <div className="flex-grow-1">
     <h5 className="card-title text-center mb-0" style={{position: 'relative', left: '-50px'}}>
       <a href='' style={{textDecoration: 'none', color: 'black'}}>{userContext.user.name}</a>
@@ -188,17 +199,7 @@ const UserProfile = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
-                    </Form.Group>
-                    <Form.Group controlId="formPic">
-                        <Form.Label>Enter your profile pic link</Form.Label>
-                        <Form.Control
-                            type="text"
-                            required
-                            placeholder="www.example.com/myImage.jpg"
-                            value={profilePic}
-                            onChange={(e) => setProfilePic(e.target.value)}
-                        />
-                    </Form.Group>
+                    </Form.Group>                    
 
                     <Form.Group controlId="formChannelLink" className="mt-3">
                         <Form.Label>Channel Link</Form.Label>

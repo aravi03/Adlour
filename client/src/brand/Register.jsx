@@ -57,7 +57,7 @@ const RegisterPage = () => {
               confirmPassword: '',
             });
             setError('');
-            navigate("/login");
+            navigate("/brand/login");
           } else {
             setError(result.message || 'Registration failed.Please try again');
             setSuccess('');

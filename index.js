@@ -20,10 +20,10 @@ const corsOptions = {
   credentials: true
 };
 // support parsing of application/json type post data
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '5mb' }));
 
 //support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
 
 //Middleware
 app.use(session({
