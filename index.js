@@ -29,7 +29,7 @@ app.use(session({
   store: MongoStore.create({
     mongoUrl: "mongodb+srv://aravi03:522000@mycluster.zubd5uc.mongodb.net/adlour?retryWrites=true&w=majority"
 }),cookie: {
-  secure: false, // Set to true if using HTTPS
+  secure: true, // Set to true if using HTTPS
   httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
   sameSite: 'Strict', // Adjust based on your needs, e.g., 'Strict' or 'None'
 }
