@@ -68,7 +68,7 @@ const UserProfile = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log("here in submit")
-      const formData = { name,category,location,channelLink,description,language,profilePic};
+      const formData = { name,category,location,channelLink,description,language};
       const url=apiUrl+'/api/user/update/'+userContext.user._id
       fetch(url, {
         method: 'POST',

@@ -6,16 +6,14 @@ const Brand = require("../models/Brand")
 const User = require("../models/User")
 const Chat = require("../models/Chat")
 const mongoose = require("mongoose")
-const { language } = require('googleapis/build/src/apis/language')
 const { ObjectId } = mongoose.Types;  // Import ObjectId if needed
-
 router.post("/update/:userID",async function (req, res) {
     try{
     var {userID}=req.params
     userID= new ObjectId(userID)
     const filter = { _id: userID };
-    const {name,channelLink,category,location,description,language,profilePic}=req.body
-    const update = {name,channelLink,category,location,description,language,profilePic}
+    const {name,channelLink,category,location,description,language}=req.body
+    const update = {name,channelLink,category,location,description,language}
     console.log(userID,update)
     const doc=await User.findOneAndUpdate(filter,update)
     console.log(doc)

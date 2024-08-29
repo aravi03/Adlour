@@ -1,11 +1,12 @@
 var GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
 const Brand = require("../models/Brand");
 const passport = require("passport")
+const backendURL=`${process.env.BACKEND_URL}`  
 
 passport.use('googleBrand',new GoogleStrategy({
     clientID:'377344164120-v9vk7n9rt004968cr1es3afn775kkdpu.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: "http://localhost:5000/api/brand/auth/google/callback",
+    callbackURL: backendURL+"/api/brand/auth/google/callback",
     passReqToCallback   : true
   },
   async function(request, accessToken, refreshToken, profile, done) {
@@ -16,7 +17,8 @@ passport.use('googleBrand',new GoogleStrategy({
       const brand= await Brand.create({
         email:profile.emails[0].value,
         name:profile.displayName,
-        profilePic:profile.photos[0].value
+        profilePic:profile.photos[0].value,
+        strategy:'google'
       })
       return done(null, brand);
     }

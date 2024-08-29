@@ -24,7 +24,7 @@ export default function Chat({chatPeople}) {
                   people.lastMessageTimestamp= date.toLocaleDateString('en-US', options);
               }
             return(
-            <li  key={people.withUserID} onClick={() => handleClick(people.withUserID,people.withUserName,people.withUserPic)} class="p-2 border-bottom bg-body-tertiary">
+            <li style={{cursor:'pointer'}}  key={people.withUserID} onClick={() => handleClick(people.withUserID,people.withUserName,people.withUserPic)} class="p-2 border-bottom bg-body-tertiary">
                 <a class="d-flex justify-content-between">
                   <div class="d-flex flex-row">
                     <img src={people.withUserPic} alt="avatar"

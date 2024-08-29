@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar bg-white navbar-expand-lg p-2 fixed-top mb-5">
       <div className="container-fluid nav-menu">
-        <NavLink className="navbar-brand d-flex align-items-center me-auto me-xl-0" to="/">
+        <NavLink className="navbar-brand d-flex align-items-center me-auto me-xl-0">
           <h1 className='adlour-brand-name'>Adlour</h1>
           <span>.</span>
         </NavLink>
@@ -19,9 +19,9 @@ function Navbar() {
             <li className="nav-item">
               <NavLink className="nav-link" exact to="/creator/home" activeClassName="active">View Campaigns</NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className="nav-link" to="/creator/search" activeClassName="active">Search Brands</NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/creator/chat" activeClassName="active">Chat</NavLink>
             </li>

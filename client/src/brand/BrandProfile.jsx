@@ -103,7 +103,7 @@ const BrandProfile = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log("here in submit")
-      const formData = { name,category,location,website,description,profilePic};
+      const formData = { name,category,location,website,description};
       const url= apiUrl+'/api/brand/update/'+brandContext.brand._id
       fetch(url, {
         method: 'POST',
@@ -245,17 +245,7 @@ const BrandProfile = () => {
                             required
                             onChange={(e) => setName(e.target.value)}
                         />
-                    </Form.Group>
-                    <Form.Group controlId="formPic">
-                        <Form.Label>Enter your profile pic link</Form.Label>
-                        <Form.Control
-                            type="text"
-                            required
-                            placeholder="www.example.com/myImage.jpg"
-                            value={profilePic}
-                            onChange={(e) => setProfilePic(e.target.value)}
-                        />
-                    </Form.Group>
+                    </Form.Group>                    
 
                     <Form.Group controlId="formWebsite" className="mt-3">
                         <Form.Label>Website</Form.Label>

@@ -19,7 +19,7 @@ router.get('/google',
   router.get('/google/callback', passport.authenticate('googleBrand'),(req,res,next)=>{
     try{
     console.log("req user is ",req.user)
-    res.redirect(frontendURL+'/brand/home')  }
+    res.redirect(frontendURL+'/brand/profile')  }
     catch(err){
       console.error('Error finding campaigns by author:', err);
       res.send("Error occured")

@@ -4,9 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 const cookieParser = require('cookie-parser'); 
-const credentials = require('./credentials.json');
-const { client_id, client_secret, redirect_uris } = credentials.web;
-const oauth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
+const client_id="377344164120-v9vk7n9rt004968cr1es3afn775kkdpu.apps.googleusercontent.com"
+const client_secret="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"
+const redirect_uri="http://localhost:5000/api/user/youtube/link/callback"
+const oauth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uri);
 var session = require('express-session');
 app.use(session({
     secret: 'keyboard cat',
@@ -31,7 +32,7 @@ app.get('/auth', (req, res) => {
   res.redirect(authUrl);
 });
 
-app.get('/brand/youtube/callback', async (req, res) => {
+app.get('/api/user/youtube/link/callback', async (req, res) => {
   const { code } = req.query;
   if (code) {
     try {

@@ -17,10 +17,6 @@ const User = new Schema({
     type: String,
     default: "local",
   },
-  channelLink: {
-    type: String,
-    default: "",
-  },
   description: {
     type: String,
     default: "",
@@ -49,6 +45,10 @@ const User = new Schema({
     campaignId: String,
     status: Boolean
   }],
+  channelLink: {
+    type: String,
+    default: "",
+  },
   conversations: [
     {
       conversationID: String,
@@ -58,7 +58,29 @@ const User = new Schema({
       lastMessage: String,
       lastMessageTimestamp: Date      
     }
-  ]  
+  ],
+  youtube:{
+    channelLink: {
+      type: String,
+      default: "",
+    },
+    subscriberCount: {
+      type: String,
+      default: "",
+    },
+    viewCount: {
+      type: String,
+      default: "",
+    },
+    channelName:{
+      type: String,
+      default: ""
+    },
+    GoogleAccessToken:{
+      type: String,
+      default: ""
+    },
+  }  
 })
 
 User.plugin(passportLocalMongoose,{ usernameField: 'email' })

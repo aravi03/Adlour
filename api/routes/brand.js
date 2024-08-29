@@ -12,8 +12,8 @@ router.post("/update/:brandID",async function (req, res) {
     var {brandID}=req.params
     brandID= new ObjectId(brandID)  
     const filter = { _id: brandID };
-    const {name,website,category,location,description,profilePic}=req.body
-    const update = {name,website,category,location,description,profilePic}
+    const {name,website,category,location,description}=req.body
+    const update = {name,website,category,location,description}
     console.log(brandID,update)
     const doc=await Brand.findOneAndUpdate(filter,update)
     console.log(doc)
