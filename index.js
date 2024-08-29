@@ -9,12 +9,8 @@ var session = require('express-session');
 // const passport = require("passport")
 const MongoStore = require('connect-mongo');
 const passport = require('./api/utils/passport'); // Import passport configuration
-
-// require("./api/strategies/UserGoogleStrategy")
-// require("./api/strategies/BrandGoogleStrategy")
-// require("./api/strategies/LocalStrategy")
-// require("./api/strategies/LocalBrandsStrategy")
 require("./api/config/connectdb")
+app.set('trust proxy', 1); // Trust the first proxy in front of the app
 const corsOptions = {
   origin: 'https://www.adlour.com',//(https://your-client-app.com)
   credentials: true
@@ -33,7 +29,7 @@ app.use(session({
   store: MongoStore.create({
     mongoUrl: "mongodb+srv://aravi03:522000@mycluster.zubd5uc.mongodb.net/adlour?retryWrites=true&w=majority"
 }),cookie: {
-  secure: true, // Set to true if using HTTPS
+  secure: false, // Set to true if using HTTPS
   httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
   sameSite: 'Strict', // Adjust based on your needs, e.g., 'Strict' or 'None'
 }
