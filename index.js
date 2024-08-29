@@ -12,7 +12,7 @@ const passport = require('./api/utils/passport'); // Import passport configurati
 require("./api/config/connectdb")
 app.set('trust proxy', 1); // Trust the first proxy in front of the app
 const corsOptions = {
-  origin: 'https://www.adlour.com',//(https://your-client-app.com)
+  origin: ['https://www.adlour.com','http://localhost:5173'],//(https://your-client-app.com)
   credentials: true
 };
 // support parsing of application/json type post data
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }));
 app.use(session({
   secret: "secret",
   resave: false ,
-  saveUninitialized: true ,
+  saveUninitialized: false ,
   store: MongoStore.create({
     mongoUrl: "mongodb+srv://aravi03:522000@mycluster.zubd5uc.mongodb.net/adlour?retryWrites=true&w=majority"
 }),cookie: {

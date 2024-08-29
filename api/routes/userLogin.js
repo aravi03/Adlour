@@ -21,6 +21,8 @@ router.get('/google',
   router.get('/google/callback', passport.authenticate('googleUser'),async (req,res,next)=>{
     try{
     console.log("req user ID is ",req.user._id)
+    console.log('Session in user:', req.session);
+
     // const response = await axios.get('https://www.googleapis.com/youtube/v3/channels', {
     //   params: {
     //     part: 'contentDetails,snippet,statistics,status,topicDetails,brandingSettings,contentOwnerDetails,localizations',
